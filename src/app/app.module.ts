@@ -3,23 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './store/reducers';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoItemComponent } from './components/todo-item/todo-item.component';
+import { from } from 'rxjs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { TodoService } from './services/todo.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoListComponent,
+    TodoItemComponent,
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    })
+    BrowserAnimationsModule,
+    MatCheckboxModule
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
