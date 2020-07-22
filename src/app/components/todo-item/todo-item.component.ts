@@ -22,7 +22,7 @@ export class TodoItemComponent implements OnInit {
     if (state.checked) {
       this.taskFacade.completeTask(this.item.id);
     } else {
-      this.taskFacade.uncompleteTask(this.item.id);
+      this.taskFacade.uncompletedTask(this.item.id);
     }
   }
 }

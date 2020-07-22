@@ -13,6 +13,8 @@ import {taskReducer} from './store/task.reducer';
 import {TaskFacade} from './store/task.facade';
 import {MatDialogModule} from '@angular/material/dialog';
 import {ModalComponent} from './components/modal/modal.component';
+import {EffectsModule} from '@ngrx/effects';
+import {TaskEffects} from './store/task.effects';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {ModalComponent} from './components/modal/modal.component';
     MatButtonModule,
     HttpClientModule,
     MatDialogModule,
-    StoreModule.forRoot({taskReducer})
+    StoreModule.forRoot({taskState: taskReducer}),
+    EffectsModule.forRoot([TaskEffects])
   ],
   providers: [TodoService, TaskFacade],
   bootstrap: [AppComponent]

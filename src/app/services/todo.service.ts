@@ -35,7 +35,7 @@ export class TodoService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getTodos(): Observable<any[]> {
+  getTasks(): Observable<any[]> {
     return this.todoList$;
   }
 }
