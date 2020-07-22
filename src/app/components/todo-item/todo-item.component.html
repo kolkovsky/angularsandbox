@@ -1,0 +1,7 @@
+<div class="item-container">
+  <mat-checkbox [checked]="item.isDone" (change)="changeState($event)">
+    <span [style]="item.isDone ? 'text-decoration: line-through' : ''">
+      {{item.name}}
+    </span>
+  </mat-checkbox>
+</div>
