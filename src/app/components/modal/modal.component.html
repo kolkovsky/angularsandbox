@@ -1,7 +1,19 @@
 <h2 mat-dialog-title>Add new task</h2>
 <mat-dialog-content>
-
+  <p>Enter name task</p>
+  <mat-form-field>
+    <mat-label>Task name:</mat-label>
+    <input matInput [(ngModel)]="task.name">
+  </mat-form-field>
+  <p>Enter task priority:</p>
+  <mat-form-field appearance="fill">
+    <mat-select [(ngModel)]="task.priority">
+      <mat-option *ngFor="let priority of priorityValues" [value]="priority">
+        {{priority}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button color="primary">Create task</button>
+  <button mat-button color="primary" (click)="createTask()">Create task</button>
 </mat-dialog-actions>

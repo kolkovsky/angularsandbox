@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject, Observable, of} from 'rxjs';
 import {Priority} from '../models/priority';
-import {Effect} from '@ngrx/effects';
+import {Task} from '../models/task';
 
-const todos = [
+const todos: Task[] = [
   {
     id: 1,
     name: 'Create own website',
@@ -37,5 +37,11 @@ export class TodoService {
 
   getTasks(): Observable<any[]> {
     return this.todoList$;
+  }
+
+  addTask(task: Task): Observable<Task> {
+    todos.push(task);
+    const updatedTasks: Task[] = todos;
+    return of<Task>(task);
   }
 }

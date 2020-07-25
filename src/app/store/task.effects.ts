@@ -1,8 +1,15 @@
-import {Inject, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Observable, of} from 'rxjs';
 import {Action} from '@ngrx/store';
-import {GetTaskFailedAction, GetTasksAction, GetTaskSuccessAction, TaskActionTypes} from './task.action';
+import {
+  AddTaskAction, AddTaskFailedAction,
+  AddTaskSuccessAction,
+  GetTaskFailedAction,
+  GetTasksAction,
+  GetTaskSuccessAction,
+  TaskActionTypes
+} from './task.action';
 import {catchError, concatMap, map} from 'rxjs/operators';
 import {TodoService} from '../services/todo.service';
 import {Task} from '../models/task';
@@ -19,6 +26,17 @@ export class TaskEffects {
       return this.taskService.getTasks().pipe(
         map((tasks: Task[]) => new GetTaskSuccessAction({tasks})),
         catchError((error: any) => of(new GetTaskFailedAction({error})))
+      );
+    })
+  );
+
+  @Effect() public addTask$: Observable<Action> = this.actions$.pipe(
+    ofType(TaskActionTypes.ADD_TASK),
+    concatMap((action: AddTaskAction) => {
+      return this.taskService.addTask(action.payload).pipe(
+        map((task: Task) => new AddTaskSuccessAction(task)),
+        map(() => new GetTasksAction()),
+        catchError((error => of(new AddTaskFailedAction({error}))))
       );
     })
   );

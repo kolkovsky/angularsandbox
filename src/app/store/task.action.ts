@@ -3,6 +3,8 @@ import {Task} from '../models/task';
 
 export enum TaskActionTypes {
   ADD_TASK = '[Task Action] Add Task',
+  ADD_TASK_SUCCESS = '[Task Action] Add Task Success',
+  ADD_TASK_FAILED = '[Task Action] Add Task Failed',
   COMPLETE_TASK = '[Task Action] Complete Task',
   UNCOMPLETED_TASK = '[Task Action] Uncompleted Task',
   DELETE_TASK = '[Task Action] Delete Task',
@@ -14,21 +16,35 @@ export enum TaskActionTypes {
 export class AddTaskAction implements Action {
   public readonly type: string = TaskActionTypes.ADD_TASK;
 
-  constructor(public payload: Task) {
+  constructor(public readonly payload: Task) {
+  }
+}
+
+export class AddTaskSuccessAction implements Action {
+  public readonly type: string = TaskActionTypes.ADD_TASK_SUCCESS;
+
+  constructor(public readonly payload: Task) {
+  }
+}
+
+export class AddTaskFailedAction implements Action {
+  public readonly type: string = TaskActionTypes.ADD_TASK_FAILED;
+
+  constructor(public readonly payload: { error: any }) {
   }
 }
 
 export class CompleteTaskAction implements Action {
   public readonly type: string = TaskActionTypes.COMPLETE_TASK;
 
-  constructor(public payload: { id: string }) {
+  constructor(public readonly payload: { id: string }) {
   }
 }
 
 export class UncompletedTaskAction implements Action {
   public readonly type: string = TaskActionTypes.UNCOMPLETED_TASK;
 
-  constructor(public payload: { id: string }) {
+  constructor(public readonly payload: { id: string }) {
   }
 }
 
@@ -62,6 +78,8 @@ export class GetTaskFailedAction implements Action {
 
 export type TaskActionType =
   | AddTaskAction
+  | AddTaskSuccessAction
+  | AddTaskFailedAction
   | CompleteTaskAction
   | UncompletedTaskAction
   | DeleteTaskAction
