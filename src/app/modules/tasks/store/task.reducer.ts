@@ -1,21 +1,5 @@
 import {TaskActionType, TaskActionTypes} from './task.action';
-import {Task} from '../models/task';
-
-export interface TaskState {
-  tasks: Task[];
-  addedTask: Task;
-  deletedTask: Task;
-  completedTasksIds: number[];
-  uncompletedTasksIds: number[];
-}
-
-const initialTaskState: TaskState = {
-  tasks: [],
-  addedTask: null,
-  deletedTask: null,
-  completedTasksIds: [],
-  uncompletedTasksIds: []
-};
+import {TaskState, initialTaskState} from './task.state';
 
 export function taskReducer(state: TaskState = initialTaskState, action: TaskActionType): TaskState {
   switch (action.type) {

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TaskFacade} from '../../store/task.facade';
+import {TaskFacade} from '../../modules/tasks/store/task.facade';
 import {Task} from 'src/app/models/task';
 import {Priority} from '../../models/priority';
 import {MatDialogRef} from '@angular/material/dialog';
@@ -13,8 +13,7 @@ export class ModalComponent implements OnInit {
   public task: Task;
   public priorityValues: string[] = Object.keys(Priority);
 
-  constructor(private taskFacade: TaskFacade,
-              public dialogRef: MatDialogRef<ModalComponent>) {
+  constructor() {
   }
 
   public ngOnInit(): void {
@@ -26,7 +25,7 @@ export class ModalComponent implements OnInit {
   }
 
   public createTask(): void {
-    this.taskFacade.addTask(this.task);
-    this.dialogRef.close();
+    // this.taskFacade.addTask(this.task);
+    // this.dialogRef.close();
   }
 }

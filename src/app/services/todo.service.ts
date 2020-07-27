@@ -25,9 +25,7 @@ const todos: Task[] = [
   }
 ];
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TodoService {
 
   private todoList$: BehaviorSubject<any> = new BehaviorSubject<any>(todos);
