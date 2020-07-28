@@ -11,13 +11,13 @@ import {
   TaskActionTypes
 } from './task.action';
 import {catchError, concatMap, map} from 'rxjs/operators';
-import {TodoService} from '../../../services/todo.service';
+import {TasksService} from '../../../services/tasks.service';
 import {Task} from '../../../models/task';
 
 @Injectable()
 export class TaskEffects {
   constructor(private actions$: Actions,
-              private taskService: TodoService) {
+              private taskService: TasksService) {
   }
 
   @Effect() public loadTask$: Observable<Action> = this.actions$.pipe(

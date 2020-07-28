@@ -6,9 +6,10 @@ import {RestoreComponent} from './components/restore/restore.component';
 import {FormComponent} from './components/form/form.component';
 import {SharedModule} from '../shared.module';
 import {routes} from './routes.config';
+import {RegistrationComponent} from './components/registration/registration.component';
 
 @NgModule({
-  declarations: [LoginComponent, RestoreComponent, FormComponent],
+  declarations: [LoginComponent, RestoreComponent, FormComponent, RegistrationComponent],
   providers: [],
   imports: [
     CommonModule,

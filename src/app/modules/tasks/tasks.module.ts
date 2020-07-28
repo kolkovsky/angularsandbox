@@ -10,7 +10,7 @@ import {StoreModule} from '@ngrx/store';
 import {taskReducer} from './store/task.reducer';
 import {EffectsModule} from '@ngrx/effects';
 import {TaskEffects} from './store/task.effects';
-import {TodoService} from '../../services/todo.service';
+import {TasksService} from '../../services/tasks.service';
 import {taskStateKey} from './store/task.selectors';
 import {routes} from './routes.config';
 
@@ -28,7 +28,7 @@ import {routes} from './routes.config';
     RouterModule.forChild(routes),
     HttpClientModule
   ],
-  providers: [TodoService]
+  providers: [TasksService]
 })
 export class TasksModule {
 }

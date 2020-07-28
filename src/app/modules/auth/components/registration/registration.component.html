@@ -1,6 +1,14 @@
 <div class="form-container">
-  <h1>Welcome to Task Manager</h1>
+  <h1>Welcome to registration page</h1>
   <div class="form-container__inputs">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter first name:</mat-label>
+      <input matInput placeholder="First Name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter last name:</mat-label>
+      <input matInput placeholder="Last Name">
+    </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Enter email:</mat-label>
       <input matInput placeholder="Email address">
@@ -11,10 +19,7 @@
     </mat-form-field>
   </div>
   <button class="form-container__button"
-          mat-raised-button color="primary">Sing in
+          mat-raised-button color="primary">Sing up
   </button>
-  <div class="form-container__links">
-    <a routerLink="singup" class="mat-subheading-2">Sing Up /</a>
-    <a routerLink="restore" class="mat-subheading-2">Restore?</a>
-  </div>
 </div>
+
