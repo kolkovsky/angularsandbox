@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TaskFacade} from '../../modules/tasks/store/task.facade';
+import {TaskFacade} from '../../modules/dashboard/modules/tasks/store/task.facade';
 import {Task} from 'src/app/models/task';
 import {Priority} from '../../models/priority';
 import {MatDialogRef} from '@angular/material/dialog';

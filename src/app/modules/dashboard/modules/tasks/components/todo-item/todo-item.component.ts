@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, Host, Optional, Self} from '@angular/core';
 import {MatCheckboxChange} from '@angular/material/checkbox';
 import {TaskFacade} from '../../store/task.facade';
-import {TestService} from '../../../../services/test.service';
+import {TestService} from '../../../../../../services/test.service';
 import {Test} from 'tslint';
 
 @Component({

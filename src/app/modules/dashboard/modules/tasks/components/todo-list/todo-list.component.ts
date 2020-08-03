@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {TaskFacade} from '../../store/task.facade';
 import {Task} from 'src/app/models/task';
 import {Observable} from 'rxjs';
-import {ModalService} from '../../../../services/modal.service';
-import {TestService} from '../../../../services/test.service';
+import {ModalService} from '../../../../../../services/modal.service';
+import {TestService} from '../../../../../../services/test.service';
 
 @Component({
   // tslint:disable-next-line:component-selector

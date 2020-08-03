@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Store, select} from '@ngrx/store';
 import {AddTaskAction, CompleteTaskAction, DeleteTaskAction, UncompletedTaskAction, GetTasksAction} from './task.action';
-import {Task} from '../../../models/task';
-import {AppState} from '../../../store/app.states';
+import {Task} from '../../../../../models/task';
+import {AppState} from '../../../../../store/app.states';
 import {selectTaskStateTasks} from './task.selectors';
 import {Observable} from 'rxjs';
 import {TaskState} from './task.state';

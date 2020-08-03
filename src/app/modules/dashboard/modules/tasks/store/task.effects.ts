@@ -11,8 +11,8 @@ import {
   TaskActionTypes
 } from './task.action';
 import {catchError, concatMap, map} from 'rxjs/operators';
-import {TasksService} from '../../../services/tasks.service';
-import {Task} from '../../../models/task';
+import {TasksService} from '../../../../../services/tasks.service';
+import {Task} from '../../../../../models/task';
 
 @Injectable()
 export class TaskEffects {

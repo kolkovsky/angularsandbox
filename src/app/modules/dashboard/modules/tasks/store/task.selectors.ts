@@ -1,5 +1,5 @@
 import {createFeatureSelector, createSelector} from '@ngrx/store';
-import {AppState} from '../../../store/app.states';
+import {AppState} from '../../../../../store/app.states';
 import {TaskState} from './task.state';
 
 export const taskStateKey = 'taskState';

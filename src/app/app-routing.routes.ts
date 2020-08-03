@@ -6,12 +6,12 @@ export const routes: Routes = [
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path: 'tasks',
-    loadChildren: () => import('./modules/tasks/tasks.module').then(m => m.TasksModule)
+    path: 'dashboard',
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: '',
     redirectTo: 'auth',
     pathMatch: 'full'
-  }
+  },
 ];
