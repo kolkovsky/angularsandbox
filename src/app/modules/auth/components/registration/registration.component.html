@@ -1,25 +1,31 @@
 <div class="form-container">
   <h1>Welcome to registration page</h1>
-  <div class="form-container__inputs">
+  <div class="form-container__inputs" [formGroup]="formGroup">
     <mat-form-field appearance="outline">
       <mat-label>Enter first name:</mat-label>
-      <input matInput placeholder="First Name">
+      <input matInput placeholder="First Name" formControlName="firstName" />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Enter last name:</mat-label>
-      <input matInput placeholder="Last Name">
+      <input matInput placeholder="Last Name" formControlName="lastName" />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Enter email:</mat-label>
-      <input matInput placeholder="Email address">
+      <input matInput placeholder="Email address" formControlName="email" type="email" />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Enter password:</mat-label>
-      <input matInput placeholder="Password">
+      <input matInput placeholder="Password" formControlName="password" type="password" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Repeat password:</mat-label>
+      <input matInput placeholder="Password" formControlName="repeatPassword" type="password" />
     </mat-form-field>
   </div>
-  <button class="form-container__button"
-          mat-raised-button color="primary">Sing up
+  <button class="form-container__button" mat-raised-button color="primary" [disabled]="formGroup.invalid">
+    Sing up
+  </button>
+  <button class="form-container__button" mat-button color="primary" routerLink="../login">
+    Bask to sing in
   </button>
 </div>
-

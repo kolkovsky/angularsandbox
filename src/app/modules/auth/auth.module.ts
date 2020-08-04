@@ -7,6 +7,7 @@ import {FormComponent} from './components/form/form.component';
 import {SharedModule} from '../shared.module';
 import {routes} from './routes.config';
 import {RegistrationComponent} from './components/registration/registration.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [LoginComponent, RestoreComponent, FormComponent, RegistrationComponent],
@@ -14,6 +15,7 @@ import {RegistrationComponent} from './components/registration/registration.comp
   imports: [
     CommonModule,
     SharedModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   exports: []
