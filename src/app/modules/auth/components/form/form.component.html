@@ -1,19 +1,16 @@
 <div class="form-container">
   <h1>Welcome to Task Manager</h1>
-  <div class="form-container__inputs">
+  <div class="form-container__inputs" [formGroup]="formGroup">
     <mat-form-field appearance="outline">
       <mat-label>Enter email:</mat-label>
-      <input matInput placeholder="Email address">
+      <input matInput placeholder="Email address" formControlName="email" email="true"/>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Enter password:</mat-label>
-      <input matInput placeholder="Password">
+      <input matInput placeholder="Password" formControlName="password" type="password" />
     </mat-form-field>
   </div>
-  <button class="form-container__button"
-          mat-raised-button color="primary"
-          (click)="login()">Sing in
-  </button>
+  <button class="form-container__button" mat-raised-button color="primary" [disabled]="formGroup.invalid" (click)="login()">Sing in</button>
   <div class="form-container__links">
     <a routerLink="../registration" class="mat-subheading-2">Sing Up /</a>
     <a routerLink="../restore" class="mat-subheading-2">Restore?</a>

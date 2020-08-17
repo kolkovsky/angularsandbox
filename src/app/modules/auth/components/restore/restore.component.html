@@ -1,16 +1,15 @@
 <div class="form-container">
   <h1>Restore your password</h1>
-  <div class="form-container__inputs">
+  <div class="form-container__inputs" [formGroup]="formGroup">
     <mat-form-field appearance="outline">
       <mat-label>Enter email:</mat-label>
-      <input matInput placeholder="Email address">
+      <input matInput placeholder="Email address" formControlName="email" />
     </mat-form-field>
   </div>
-  <button class="form-container__button"
-          mat-raised-button color="primary">Restore
+  <button class="form-container__button" mat-raised-button color="primary" [disabled]="formGroup.invalid">
+    Restore
   </button>
-  <button class="form-container__button"
-          mat-button color="primary">Bask to sing in
+  <button class="form-container__button" mat-button color="primary" routerLink="../login">
+    Bask to sing in
   </button>
 </div>
-
