@@ -1,4 +1,4 @@
-<div class="todo-list-container">
+<div class="todo-list-container" *ngIf="(tasks | async) as items">
   <ng-container *ngFor="let item of items">
     <todo-item [item]="item"></todo-item>
   </ng-container>

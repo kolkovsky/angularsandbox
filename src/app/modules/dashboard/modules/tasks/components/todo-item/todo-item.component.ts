@@ -14,7 +14,7 @@ export class TodoItemComponent implements OnInit {
   @Input()
   public item: any;
 
-  constructor() {
+  constructor(private taskFacade: TaskFacade) {
   }
 
   public ngOnInit(): void {
@@ -24,10 +24,10 @@ export class TodoItemComponent implements OnInit {
   }
 
   public changeState(state: MatCheckboxChange): void {
-    // if (state.checked) {
-    //   this.taskFacade.completeTask(this.item.id);
-    // } else {
-    //   this.taskFacade.uncompletedTask(this.item.id);
-    // }
+    if (state.checked) {
+      this.taskFacade.completeTask(this.item.id);
+    } else {
+      this.taskFacade.uncompletedTask(this.item.id);
+    }
   }
 }

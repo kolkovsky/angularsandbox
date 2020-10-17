@@ -39,7 +39,12 @@ export class TasksService {
 
   addTask(task: Task): Observable<Task> {
     todos.push(task);
-    const updatedTasks: Task[] = todos;
     return of<Task>(task);
+  }
+
+  completeTask(id: string | number): Observable<void> {
+      const taskArrayId: number = todos.findIndex(task => task.id === id);
+      todos[taskArrayId].isDone = true;
+      return of<void>();
   }
 }
