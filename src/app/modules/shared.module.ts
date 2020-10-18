@@ -9,11 +9,11 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MatSidenavModule } from "@angular/material/sidenav";
 
 @NgModule({
-  imports: [ 
-  ],
+  imports: [],
   exports: [
     MatCheckboxModule,
     MatButtonModule,
@@ -26,6 +26,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatIconModule,
     MatSnackBarModule,
     MatGridListModule,
+    MatSidenavModule
   ],
   declarations: [],
   providers: [],
