@@ -1,0 +1,19 @@
+<section class="title-container">
+    <mat-grid-list cols="4" rowHeight="150px">
+        <mat-grid-tile
+            class="title-container__item"
+            *ngFor="let tile of tiles"
+            [colspan]="tile.cols"
+            [rowspan]="tile.rows"
+            [ngStyle]="tile.styles"
+            (click)="navigateByUrl(tile.link)">
+            <div>
+                <span class="title-container__header">
+                    <img [src]="tile.iconUrl">
+                    {{tile.header}}
+                </span>
+                <p>{{tile.description}}</p>
+            </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+</section>
