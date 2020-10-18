@@ -55,7 +55,10 @@ export class TaskEffects {
   @Effect() public readonly uncompleteTask$: Observable<Action> = this.actions$.pipe(
     ofType(TaskActionTypes.UNCOMPLETED_TASK),
     concatMap((action: UncompletedTaskAction) => {
-      return of(null);
+      return this.taskService.uncompleteTask(action.payload.id).pipe(
+        map(() => new GetTasksAction()),
+        catchError(error => of(new GetTaskFailedAction({error})))
+      );
     }),
   )
 }

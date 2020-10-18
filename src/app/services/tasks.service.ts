@@ -47,4 +47,10 @@ export class TasksService {
       todos[taskArrayId].isDone = true;
       return of<void>();
   }
+
+  uncompleteTask(id: string | number): Observable<void> {
+    const taskArrayId: number = todos.findIndex(task => task.id === id);
+    todos[taskArrayId].isDone = false;
+    return of<void>();
+  }
 }
